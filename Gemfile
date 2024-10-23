@@ -59,3 +59,5 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem "haml-rails", "~> 2.1"
