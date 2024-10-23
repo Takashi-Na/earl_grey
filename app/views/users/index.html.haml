@@ -1,0 +1,19 @@
+.container
+  .title
+    Users#index
+  .user-devise
+    .sign-up
+      = link_to 'sign up', new_user_session_path 
+    .sign-in
+      = link_to 'sign in', user_session_path
+    .sign-out
+      = link_to 'sign out', destroy_user_session_path
+  .current-user-status
+    .status-title
+      user-status
+    .status
+      - if user_signed_in?
+        logined
+      - else
+        no login
+
