@@ -1,0 +1,15 @@
+.container
+  .title
+    Tops#top
+  .user-devise
+    - if user_signed_in?
+      .signined-user
+        = current_user.email
+      .signout
+        = link_to 'sign out', destroy_user_session_path
+    - else
+      .signup
+        = link_to 'sign up', new_user_session_path 
+      .signin
+        = link_to 'sign in', user_session_path
+
