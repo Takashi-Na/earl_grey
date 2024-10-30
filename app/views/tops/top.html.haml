@@ -1,3 +1,5 @@
+= javascript_import_module_tag 'controllers/top'
+
 .container
   .title
     Tops#top
@@ -13,3 +15,28 @@
       .signin
         = link_to 'sign in', user_session_path
 
+  .modal-container
+    %button.btn.btn-primary#example_modal_btn
+      Launch demo modal
+
+.modal.fade#example_modal{
+    tabindex: '-1',
+    aria: { labelledby: 'example_modal_label', hidden: true }
+}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h1.modal-title.fs-5#example_modal_label
+          Modal title
+        %button.btn-close{
+            type: 'button',
+            'data-bs-dismiss': 'modal',
+            'aria-label': 'Close'
+        }
+      .modal-body
+        body
+      .modal-footer
+        %button.btn.btn-secondary{ type: 'button', 'data-bs-dismiss': 'modal' }
+          Close
+        %button.btn.btn-primary{ type: 'button' }
+          Save changes
