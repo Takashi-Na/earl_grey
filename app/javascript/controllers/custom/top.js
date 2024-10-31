@@ -1,4 +1,4 @@
-console.log('top.js');
+console.log('controllers/custom/top.js');
 
 const exampleModalBtn = document.querySelector('#example_modal_btn');
 
