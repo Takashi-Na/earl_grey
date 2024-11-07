@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   root "tops#top"
 
   devise_for :users
+  resources :users, only: :show
 
   resource :tops do
-    member do
+    collection do
       get "top"
     end
   end
