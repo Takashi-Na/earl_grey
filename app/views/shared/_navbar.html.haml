@@ -1,0 +1,54 @@
+%nav.navbar.navbar-expand-lg.bg-body-tertiary
+  .container-fluid
+    %a.navbar-brand{ href: '#' }
+      Earl Grey
+    %button.navbar-toggler{
+      type: 'button',
+      'data-bs-toggle': 'collapse',
+      'data-bs-target': '#navbarSupportedContent',
+      'aria-controls': 'navbarSupportedContent',
+      'aria-expanded': 'false',
+      'aria-label': 'Toggle navigation'
+      }
+      %span.navbar-toggler-icon
+    %div.collapse.navbar-collapse#navbarSupportedContent
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          %a.nav-link.active{
+            'aria-current': 'page',
+            href: '/'
+            } Top
+        - if user_signed_in?
+          %li.nav-item
+            = link_to 'Users#show', user_path(current_user), class: 'nav-link active'
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{
+            href: '#',
+            role: 'button',
+            'data-bs-toggle': 'dropdown',
+            'aria-expanded': 'false'
+          }
+            Dropdown
+            %ul.dropdown-menu
+              %li
+                %a.dropdown-item
+                  Action
+              %li
+                %a.dropdown-item
+                  Another action
+              %li
+                %hr.dropdown-divider/
+              %li
+                %a.dropdown-item
+                  Something else here
+        %li.nav-item
+          %a.nav-link.disabled
+            Disabled
+      %form.d-flex{ role: 'search' }
+        %input.form-control.me-2{
+          type: 'search',
+          placeholder: 'Search',
+          'aria-label': 'Search'
+        }
+        %button.btn.btn-outline-success{ type: 'submit' }
+          Search
