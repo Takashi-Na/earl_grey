@@ -1,3 +1,35 @@
+= javascript_import_module_tag 'src/user'
+
 .container
   .title
     Users#show
+
+  .modal-container
+    %button.btn.btn-primary#user_modal_btn
+      = link_to 'user edit(js)',
+          edit_user_path(@user),
+          class: 'btn btn-primary',
+          id: 'user_edit_btn',
+          data: { turbo_frame: 'modal-body'}
+
+
+.modal.fade#user_modal{
+    tabindex: '-1',
+    aria: { labelledby: 'user_modal_label', hidden: true }}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h1.modal-title.fs-5#user_modal_label
+          Modal title
+        %button.btn-close{
+            type: 'button',
+            'data-bs-dismiss': 'modal',
+            'aria-label': 'Close'
+        }
+      .modal-body
+        = turbo_frame_tag 'modal-body'
+      .modal-footer
+        %button.btn.btn-secondary{ type: 'button', 'data-bs-dismiss': 'modal' }
+          Close
+        %button.btn.btn-primary{ type: 'button' }
+          Save changes

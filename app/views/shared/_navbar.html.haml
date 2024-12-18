@@ -20,7 +20,7 @@
             } Top
         - if user_signed_in?
           %li.nav-item
-            = link_to 'Users#show', user_path(current_user.email), class: 'nav-link active'
+            = link_to 'Users#show', user_path(current_user), class: 'nav-link active'
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{
             href: '#',

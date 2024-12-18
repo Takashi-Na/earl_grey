@@ -13,11 +13,9 @@ Rails.application.routes.draw do
   root "tops#top"
 
   devise_for :users
-  scope "users/:email", constraints: { email: /[^\/]+/ } do
-    get "/", to: "users#show", as: "user"
-  end
+  resources :users, only: [ :show, :edit ]
 
-  resource :tops do
+  resources :tops do
     collection do
       get "top"
     end
